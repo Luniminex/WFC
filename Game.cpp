@@ -119,7 +119,7 @@ void Game::CreateWindow() {
 }
 
 void Game::LoadTiles() {
-    wfc_.LoadTiles("../tilesets/circuit");
+    wfc_.LoadTiles("../tilesets/circles");
 }
 
 void Game::Draw() {
