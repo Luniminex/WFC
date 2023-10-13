@@ -31,29 +31,20 @@ void Game::Start() {
 void Game::Play() {
     const float fps = 60.f;
     const float delay = 1000.f / fps;
-    Uint64 lastUpdate = SDL_GetTicks64();
-
 
     while(running_){
         Uint64 current = SDL_GetTicks64();
 
         HandleEvents();
 
-        float dt = static_cast<float>((current - lastUpdate)) / 1000.f;
-
         //update
-        if(keys_.at('w')){
-            wfc_.Iteration();
-            keys_.at('w') = false;
-        }
         wfc_.Iteration();
-
-        //UpdateEntities(dt);
 
         //draw
         SDL_SetRenderTarget(handle_->GetRenderer(), nullptr);
         SDL_SetRenderDrawColor(handle_->GetRenderer(), 128, 128, 128, 255);
         SDL_RenderClear(handle_->GetRenderer());
+
         Draw();
 
         SDL_RenderPresent(handle_->GetRenderer());
@@ -79,10 +70,6 @@ void Game::HandleEvents() {
                 case SDLK_e:
                     keys_['e'] = true;
                     want_quit_ = true;
-                    break;
-                case SDLK_w:
-                    keys_['w'] = true;
-                    break;
             }
         }
     }
