@@ -1,0 +1,3 @@
+/home/luniminex/CLionProjects/WFC/cmake-build-default/CMakeFiles/WaveFunctionCollapse.dir
+/home/luniminex/CLionProjects/WFC/cmake-build-default/CMakeFiles/edit_cache.dir
+/home/luniminex/CLionProjects/WFC/cmake-build-default/CMakeFiles/rebuild_cache.dir
